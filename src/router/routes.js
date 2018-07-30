@@ -78,18 +78,18 @@ export default [
   },
 
   {
-    path: '/editor',
-    component: () => import('layouts/default'),
-    children: [
-      { path: '', component: () => import('pages/index') }
-    ]
-  },
-
-  {
     path: '/about',
     component: () => import('layouts/default'),
     children: [
       { path: '', component: () => import('pages/about') }
+    ]
+  },
+
+  {
+    path: '/editor',
+    component: () => import('layouts/default'),
+    children: [
+      { path: '', component: () => import('pages/index') }
     ]
   },
 

@@ -36,7 +36,6 @@ Script
     </span>
   </transition>
   <br/>
-  <q-btn label = "Show cards" class="q-ma-lg" color="faded" @click="show"></q-btn>
   <q-btn label = "Play again" class="q-ma-lg" color="faded" @click="reset"></q-btn>
   <br/>
   </q-page>

@@ -14,7 +14,7 @@
             size="30px"
             color="dark"
           >
-            <img src="../statics/jina-ts.png" width="50px" class="flip-horizontal"/>
+            <img src="../statics/jina-tss.png" width="50px" class="flip-horizontal"/>
           </q-btn>
         </div>
         <div class="q-body-1 quote-comm q-mb-md">
