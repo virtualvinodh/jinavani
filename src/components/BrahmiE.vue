@@ -1,5 +1,5 @@
 <template>
-  <span class="brahmi" v-html="convert(text, spelling)">
+  <span class="brahmi-e-cont" v-html="convert(text, spelling)">
   </span>
 </template>
 
@@ -38,12 +38,8 @@ export default {
 }
 </script>
 
-<style scoped>
-@font-face {
-  font-family: e-Brahmi T;
-  src: url('../statics/e-Brahmi-T.ttf');
-}
-.brahmi {
+<style>
+.brahmi-e-cont {
   font-family: e-Brahmi T;
   font-size: 150%;
   line-height: 1.2em;

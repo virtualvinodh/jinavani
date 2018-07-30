@@ -1,5 +1,5 @@
 <template>
-  <span class="brahmi" v-html="convert(text, spelling)">
+  <span class="brahmi-cont" v-html="convert(text, spelling)">
   </span>
 </template>
 
@@ -72,12 +72,8 @@ export default {
 }
 </script>
 
-<style scoped>
-@font-face {
-  font-family: Adinatha Tamil Brahmi;
-  src: url('../statics/AdinathaTamilBrahmi2.otf');
-}
-.brahmi {
+<style>
+.brahmi-cont {
   font-family: Adinatha Tamil Brahmi;
   font-size: 90%;
   line-height: 2em;

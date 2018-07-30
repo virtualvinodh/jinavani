@@ -1,5 +1,5 @@
 <template>
-  <q-card inline class="cards q-ma-sm" :color="grantha && script1 === 'vatteluttu' ? 'faded': ''">
+  <q-card inline class="cards q-ma-sm non-selectable" :color="grantha && script1 === 'vatteluttu' ? 'faded': ''">
     <q-card-title>
       <component :text="fixdha(text)" spelling="late" :is="script2" :style="script2 === 'tamil' ? 'tamil' : ''"></component>
     </q-card-title>

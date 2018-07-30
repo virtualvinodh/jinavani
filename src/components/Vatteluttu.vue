@@ -1,5 +1,5 @@
 <template>
-  <span class="vatteluttu" v-html="convert(text, spelling)">
+  <span class="vatteluttu-cont" v-html="convert(text, spelling)">
   </span>
 </template>
 
@@ -36,12 +36,8 @@ export default {
 }
 </script>
 
-<style scoped>
-@font-face {
-  font-family: e-Velvi;
-  src: url('../statics/e-Velvi.ttf');
-}
-.vatteluttu {
+<style>
+.vatteluttu-cont {
   font-family: e-Velvi;
   font-size: 133%;
   line-height: 1.35em;

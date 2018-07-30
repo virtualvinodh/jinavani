@@ -143,31 +143,9 @@
     <q-page-container class="page">
       <router-view/>
     </q-page-container>
-    <q-layout-footer v-show="showFooter" class="">
+    <q-layout-footer v-show="showFooter" class="print-hide">
         <q-toolbar color="tertiary" class="footer-quote">
-            <div class="quotef">
-              <brahmi text="அகர முதல எழுத்தெல்லாம் ஆதி<br/>
-              பகவன் முதற்றே உலகு"></brahmi>
-            </div>
-            <img src="../statics/jina-tss.png" class="footer-img quotef" />
-            <div class="quotef">
-              <vatteluttu text="அகர முதல எழுத்தெல்லாம் ஆதி<br/>
-              பகவன் முதற்றே உலகு"></vatteluttu>
-            </div>
-            <div class="commentary print-hide quotef">
-              அகார எழுத்து முதலாய் இருக்கிறாப் போலே <br/>
-              உலகத்துக்கெல்லாம் <span>சர்வக்ஞனான சுவாமியே <q-tooltip> தரும சக்கரத்தை முத்திரையாகவுடைய ஜினேசுவரனே </q-tooltip> </span>
-              முதல் என்றவாறு
-            </div>
-            <div class="commentary print-hide quotef">
-              - ஜைன உரை
-            </div>
-            <div class="commentary print-hide quotef">
-              © 2018 <a href="http://www.virtualvinodh.com">Vinodh Rajan</a>. This software is released under GNU AGPL v3 license<br/>
-              © 2018 <brahmi text="𑀯𑀺𑀦𑁄𑀢𑁆 𑀭𑀸𑀚𑀦𑁆"></brahmi>&nbsp;&nbsp;
-              <vatteluttu text="வினோத் ராஜன்"></vatteluttu>&nbsp;&nbsp;
-              வினோத் ராஜன்
-            </div>
+          © 2018 <a href="http://www.virtualvinodh.com">Vinodh Rajan</a>&nbsp;&nbsp;&nbsp;vinodh@virtualvinodh.com. This software is released under GNU AGPL
           <q-btn
           round
           size="md"
@@ -225,27 +203,21 @@ export default {
 
 <style>
 .footer-img {
-  height: 50px;
+  height: 20px;
 }
 .footer-quote {
   font-size: 12px;
-}
-.commentary {
-  border-left: 1px solid red;
-  margin-left: 5px;
-  padding-left: 10px;
 }
 .page {
   margin-left: 10px;
 }
 .footer-quote {
-  text-align: left;
+  text-align: right;
   float:center;
 }
 .quotef {
   float: center;
 }
-
 .demo1 {
     color: white;
     background-color: #424242;
@@ -253,6 +225,9 @@ export default {
 }
 .social {
   text-align: center;
+}
+.q-body-1 {
+  line-height: 1.75em;
 }
 
 </style>

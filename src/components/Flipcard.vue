@@ -1,5 +1,5 @@
 <template>
-  <vue-flip :active-click="true" width="140px" height="120px" transition="2s" class="q-ma-sm flip">
+  <vue-flip :active-click="true" width="140px" height="120px" transition="2s" class="q-ma-sm flip cursor-pointer">
         <div slot="front">
           <q-card inline class="cards" :color="grantha && script1 === 'vatteluttu' ? 'faded': ''">
             <q-card-main align="center" :style="script1 === 'tamil' ? 'tamil' : ''">
@@ -8,7 +8,7 @@
           </q-card>
         </div>
         <div slot="back">
-          <q-card inline class="cards">
+          <q-card inline class="cards" color="tertiary">
             <q-card-main align="center" :style="script2 === 'tamil' ? 'tamil' : ''">
               <font size="7"><component :text="text" spelling="late" :is="script2"></component></font>
             </q-card-main>

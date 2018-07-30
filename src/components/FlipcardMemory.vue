@@ -1,5 +1,5 @@
 <template>
-  <vue-flip :active-click="true" width="140px" height="120px" transition="2s" class="q-ma-sm flip">
+  <vue-flip :active-click="true" width="140px" height="120px" transition="2s" class="q-ma-sm flip cursor-pointer">
         <div slot="front">
           <q-card inline class="cards" color="tertiary">
             <q-card-main>
