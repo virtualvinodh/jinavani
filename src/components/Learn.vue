@@ -109,7 +109,7 @@ export default {
       if (this.flip) {
         this.$q.notify({
           type: 'info',
-          message: 'Click on the card to flip it over',
+          message: 'Click on a card to flip it over',
           color: 'positive',
           position: 'top-right',
           timeout: 5000

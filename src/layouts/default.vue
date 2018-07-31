@@ -17,15 +17,7 @@
 
         </q-btn>
 
-        <q-btn
-          round
-          size="xl"
-          text-color="white"
-          color="#5D8D89"
-        >
-          <vatteluttu text="ஶ்ரீ" class="demo1"> </vatteluttu>
-
-        </q-btn>
+        <img src="../statics/icons/icon-512x512.png" width="60px" class="q-ml-sm"/>
 
         <q-toolbar-title>
           Jinavani : ஜினவாணி
@@ -229,5 +221,17 @@ export default {
 .q-body-1 {
   line-height: 1.75em;
 }
-
+@font-face {
+  font-family: Adinatha Tamil Brahmi;
+  src: url('../statics/AdinathaTamilBrahmi2.otf');
+}
+@font-face {
+  font-family: e-Brahmi T;
+  src: url('../statics/e-Brahmi-T.ttf');
+}
+@font-face {
+  font-family: e-Velvi;
+  src: url('../statics/e-Velvi.ttf');
+  font-display: block;
+}
 </style>

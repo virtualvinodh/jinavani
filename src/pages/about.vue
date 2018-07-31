@@ -3,7 +3,7 @@
         <div class="q-mb-lg">
           <q-btn
             round
-            size="30px"
+            size="xl"
             color="dark"
           >
             <vatteluttu text="ஶ்ரீ" class="demo1"> </vatteluttu>
@@ -11,7 +11,7 @@
           <div class="invoc q-ma-sm q-display-1"><vatteluttu text="ஜிநாய நம"> </vatteluttu> </div>
           <q-btn
             round
-            size="30px"
+            size="xl"
             color="dark"
           >
             <img src="../statics/jina-tss.png" width="50px" class="flip-horizontal"/>
@@ -63,18 +63,6 @@ export default {
 .invoc-img {
   margin-top: -30px;
   display:inline-block;
-}
-@font-face {
-  font-family: Adinatha Tamil Brahmi;
-  src: url('../statics/AdinathaTamilBrahmi2.otf');
-}
-@font-face {
-  font-family: e-Brahmi T;
-  src: url('../statics/e-Brahmi-T.ttf');
-}
-@font-face {
-  font-family: e-Velvi;
-  src: url('../statics/e-Velvi.ttf');
 }
 .quote-comm {
   text-align: left;
