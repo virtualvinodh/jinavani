@@ -30,7 +30,8 @@
         <br/>
 
         <component v-for="consonant in consonants" :key="consonant" :script1="script" script2="tamil" :text="consonant" class="q-ma-sm"
-                     :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)">
+                     :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)"
+                     v-if="script !== 'vatteluttu' || consonant !== 'த⁴'">
         </component>
 
         <br/>

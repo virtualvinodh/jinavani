@@ -87,6 +87,9 @@
           <q-item to="/e-velvi-manual">
             <q-item-main label="Vattelutu Font Manual" sublabel="வட்டெழுத்து கையேடு" />
           </q-item>
+            <q-item @click.native="openURL('http://www.virtualvinodh.com/wp/tamil-script-evolution/')" link>
+              <q-item-main label="Tamil Script Evolution" sublabel="தமிழ் எழுத்துக்கள்  வளர்ச்சி" />
+            </q-item>
           </q-collapsible>
         <q-collapsible icon="developer board" label="Other Tools" sublabel="பிற கருவிகள்">
             <q-item href='http://www.virtualvinodh.com/aksharamukha' link>
