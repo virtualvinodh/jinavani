@@ -75,7 +75,7 @@ export default {
 <style>
 .brahmi-cont {
   font-family: Adinatha Tamil Brahmi;
-  font-size: 90%;
+  font-size: 130%;
   line-height: 2em;
 }
 </style>

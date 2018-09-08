@@ -39,7 +39,7 @@ export default {
 <style>
 .vatteluttu-cont {
   font-family: e-Velvi;
-  font-size: 133%;
+  font-size: 193%;
   line-height: 1.35em;
 }
 </style>

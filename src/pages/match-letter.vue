@@ -43,7 +43,7 @@ Deck 2
       <q-card v-for="(i,index) in randomList" :key="i" inline class="cards q-ma-sm"
        @click.native="select(parseInt(index), 1)" :color="typeof colors1[index] === 'undefined' ? '' : colors1[index]">
         <q-card-main align="center">
-          <font size="6"><component :text="compounds[i]" spelling="late" :is="script1"></component></font>
+          <font :size="script1 === 'tamil' ? 6 : 5"><component :text="compounds[i]" spelling="late" :is="script1"></component></font>
         </q-card-main>
       </q-card>
     </transition-group>
@@ -62,7 +62,7 @@ Deck 2
       <q-card v-for="(i,index) in randomList2" :key="i" inline class="cards q-ma-sm"
        @click.native="select(parseInt(index), 2)" :color="typeof colors2[index] === 'undefined' ? '' : colors2[index]">
         <q-card-main align="center">
-          <font size="6"><component :text="compounds[i]" spelling="late" :is="script2"></component></font>
+          <font :size="script2 === 'tamil' ? 6 : 5"><component :text="compounds[i]" spelling="late" :is="script2"></component></font>
         </q-card-main>
       </q-card>
     </transition-group>

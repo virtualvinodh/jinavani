@@ -92,7 +92,7 @@
             </q-item>
           </q-collapsible>
         <q-collapsible icon="developer board" label="Other Tools" sublabel="பிற கருவிகள்">
-            <q-item href='http://www.virtualvinodh.com/aksharamukha' link>
+            <q-item @click.native="openURL('http://www.virtualvinodh.com/aksharamukha')" link>
               <q-item-main label="Aksharamukha" sublabel="அக்ஷரமுகம்" />
             </q-item>
             <q-item @click.native="openURL('http://www.avalokitam.com')" link>

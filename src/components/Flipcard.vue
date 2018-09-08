@@ -3,14 +3,14 @@
         <div slot="front">
           <q-card inline class="cards" :color="grantha && script1 === 'vatteluttu' ? 'faded': ''">
             <q-card-main align="center" :style="script1 === 'tamil' ? 'tamil' : ''">
-              <font size="7"><component :text="text" spelling="late" :is="script1"></component></font>
+              <font :size="script1 === 'tamil' ? 7 : 6"><component :text="text" spelling="late" :is="script1"></component></font>
             </q-card-main>
           </q-card>
         </div>
         <div slot="back">
           <q-card inline class="cards" color="tertiary">
             <q-card-main align="center" :style="script2 === 'tamil' ? 'tamil' : ''">
-              <font size="7"><component :text="text" spelling="late" :is="script2"></component></font>
+              <font :size="script2 === 'tamil' ? 7 : 6"><component :text="text" spelling="late" :is="script2"></component></font>
             </q-card-main>
           </q-card>
         </div>

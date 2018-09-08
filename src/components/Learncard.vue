@@ -4,7 +4,7 @@
       <component :text="fixdha(text)" spelling="late" :is="script2" :style="script2 === 'tamil' ? 'tamil' : ''"></component>
     </q-card-title>
     <q-card-main align="center">
-      <font size="7"><component :text="text" spelling="late" :is="script1"></component></font>
+      <font size="6"><component :text="text" spelling="late" :is="script1"></component></font>
     </q-card-main>
   </q-card>
 </template>

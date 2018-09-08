@@ -41,7 +41,7 @@ export default {
 <style>
 .brahmi-e-cont {
   font-family: e-Brahmi T;
-  font-size: 150%;
+  font-size: 217%;
   line-height: 1.2em;
 }
 </style>

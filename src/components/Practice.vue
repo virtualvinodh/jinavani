@@ -21,7 +21,7 @@
           <q-input placeholder="answer" ref="'q' + i" v-model="answers['q' + index]"></q-input>
         </q-card-title>
         <q-card-main align="center">
-          <font size="7"><component :text="compounds[i]" spelling="late" :is="script"></component></font>
+          <font size="6"><component :text="compounds[i]" spelling="late" :is="script"></component></font>
         </q-card-main>
         <transition
            enter-active-class="animated fadeIn"

@@ -4,11 +4,17 @@
      :toolbar="this.$q.platform.is.mobile ? toolbarMobile: toolbarNormal"
      class="q-ma-sm print-hide"
      v-model="textInput"/>
-      <div ref="brahmiText" class="q-pa-md" id="printbrahmi">
+      <div ref="brahmiText" class="q-pa-md" id="printbrahmi" :style="{'font-size': fontSize + '%'}">
         <component :text="sanitize(textInput)" :spelling="options.spelling"
           :is="options.script === 'brahmi' ? options.font : options.script"></component>
       </div>
       <QBtn color="light" class="q-ml-md q-mb-md print-hide" label="Download as image" @click="imageConvert"> </QBtn>
+      <QBtn color="light" class="q-ml-md q-mb-md print-hide" @click="fontSize = fontSize + 10">
+        <q-icon name="zoom in" />
+      </QBtn>
+      <QBtn color="light" class="q-ml-md q-mb-md print-hide" @click="fontSize = fontSize - 10">
+        <q-icon name="zoom out" />
+      </QBtn>
       <!-- <QBtn color="light" class="q-ml-md q-mb-md print-hide" label="Print" @click="printDocument"> </QBtn> -->
       <controls v-model="options" :extra="true" class="q-ml-md print-hide"></controls>
       <a :href="brahmiImg" ref="imgDownload" :style="{'display': 'none'}" download="text.png"><button>Download</button></a>
@@ -19,7 +25,7 @@
 </style>
 
 <script>
-import {QEditor, QRadio, QBtn, QField, QBtnToggle, QToggle} from 'quasar'
+import {QEditor, QRadio, QBtn, QField, QBtnToggle, QToggle, QSlider} from 'quasar'
 import Brahmi from '../components/Brahmi'
 import BrahmiE from '../components/BrahmiE'
 import Vatteluttu from '../components/Vatteluttu'
@@ -39,12 +45,14 @@ export default {
     QToggle,
     BrahmiE,
     Vatteluttu,
-    Controls
+    Controls,
+    QSlider
   },
   plugins: ['Notify'],
   data () {
     return {
       textInput: 'தமிழில் உள்ளிடுக',
+      fontSize: 100,
       options: {},
       brahmiImg: '',
       toolbarNormal: [

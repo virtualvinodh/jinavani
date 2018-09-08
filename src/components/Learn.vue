@@ -6,7 +6,7 @@
         <br/>
 
     </q-page-sticky>
-    <font size="6">
+    <font size="5">
       <component :text="script === 'vatteluttu' ? 'வட்டெழுத்து' : 'தமிழ் பிராமி'"
         spelling="late" :is="script" class="cards q-ma-sm"></component>
     </font> <br/>
@@ -51,7 +51,8 @@
 
         <span v-for="consonant in consonants" :key="consonant + '2'" v-if="script !== 'vatteluttu' || consonant !== 'த⁴'">
           <component v-for="vowelSign in vowelSigns" :key="vowelSign + '2'" :script1="script" script2="tamil" :text="consonant + vowelSign" class="q-ma-sm"
-                     :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)">
+                     :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)"
+                     v-if="script !== 'vatteluttu' || !grantha.includes(consonant) || !short.includes(vowelSign)">
           </component>
           <br/>
         </span>

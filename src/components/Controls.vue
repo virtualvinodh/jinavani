@@ -87,10 +87,6 @@ export default {
     update: function () {
       var options = {}
 
-      options['script'] = this.script
-      options['font'] = this.font
-      options['spelling'] = this.spelling
-
       if (this.font === 'brahmi-e') {
         this.spelling = 'middle'
       }
@@ -98,6 +94,10 @@ export default {
       if (this.font === 'brahmi') {
         this.spelling = 'late'
       }
+
+      options['script'] = this.script
+      options['font'] = this.font
+      options['spelling'] = this.spelling
 
       this.$emit('input', options)
     },
