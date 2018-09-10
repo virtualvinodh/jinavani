@@ -147,6 +147,7 @@ export default {
     randomListGen: function () {
       this.randomListOld = this.randomList.slice()
       this.randomList = []
+      this.randomOptions = []
       while (this.randomList.length < this.countTotal) {
         let random = this.getRandomCompound()
         if (!this.randomList.includes(random) && !this.randomListOld.includes(random)) {

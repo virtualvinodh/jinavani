@@ -3,7 +3,7 @@
         <div class="q-mb-lg">
           <q-btn
             round
-            size="xl"
+            size="lg"
             color="dark"
           >
             <vatteluttu text="ஶ்ரீ" class="demo1"> </vatteluttu>
@@ -11,10 +11,10 @@
           <div class="invoc q-ma-sm q-display-1"><vatteluttu text="ஜிநாய நம"> </vatteluttu> </div>
           <q-btn
             round
-            size="xl"
+            size="lg"
             color="dark"
           >
-            <img src="../statics/jina-tss.png" width="50px" class="flip-horizontal"/>
+            <img src="../statics/jina-tss.png" width="45px" class="flip-horizontal"/>
           </q-btn>
         </div>
         <div class="q-body-1 quote-comm q-mb-md">
@@ -59,7 +59,7 @@ export default {
 <style>
 .invoc {
   display:inline;
-  font-size:150%;
+  font-size:125%;
 }
 .invoc-img {
   margin-top: -30px;
