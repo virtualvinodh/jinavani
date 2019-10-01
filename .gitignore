@@ -19,7 +19,3 @@ yarn-error.log*
 *.sln
 
 src/plugins/analytics\.js
-
-src/statics/e-Brahmi-T\.ttf
-
-src/statics/e-Velvi\.ttf

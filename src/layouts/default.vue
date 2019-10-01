@@ -21,7 +21,7 @@
 
         <q-toolbar-title>
           Jinavani : ஜினவாணி
-          <div slot="subtitle">Tamil Epigraphic Editor : தமிழ்க் கல்வெட்டுச் சொற்செயலி</div>
+          <div slot="subtitle">Epigraphic Editor : கல்வெட்டுச் சொற்செயலி</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -136,6 +136,15 @@
     </q-layout-drawer>
 
     <q-page-container class="page">
+      <div :class="$q.platform.is.mobile ? 'alert2': 'alert'" v-if="visibleAlert2" class="q-ma-sm">
+      <q-alert
+          color="grey-7"
+          icon="favorite"
+          appear
+          :actions="[{ label: 'Hide', handler: hideAlert }]"
+          class="q-mb-sm"
+        > <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZVFCCB2F4SL6&source=url">Support</a> Jinavani! </q-alert>
+      </div>
       <router-view/>
     </q-page-container>
     <q-layout-footer v-show="showFooter" class="print-hide">
@@ -161,7 +170,7 @@
 </template>
 
 <script>
-import { openURL, QLayoutFooter, QTooltip, QWindowResizeObservable, QCollapsible } from 'quasar'
+import { openURL, QLayoutFooter, QTooltip, QWindowResizeObservable, QCollapsible, QAlert } from 'quasar'
 import Brahmi from '../components/Brahmi'
 import Vatteluttu from '../components/Vatteluttu'
 import SocialSharing from 'vue-social-sharing'
@@ -175,16 +184,27 @@ export default {
     Vatteluttu,
     QWindowResizeObservable,
     QCollapsible,
-    SocialSharing
+    SocialSharing,
+    QAlert
   },
   data () {
     return {
       leftDrawerOpen: true,
+      visibleAlert2: true,
       showFooter: true
+    }
+  },
+  mounted: function () {
+    if (localStorage.visibleAlert2) {
+      this.visibleAlert2 = JSON.parse(localStorage.visibleAlert2)
     }
   },
   methods: {
     openURL,
+    hideAlert: function () {
+      this.visibleAlert2 = false
+      localStorage.visibleAlert2 = JSON.stringify(this.visibleAlert2)
+    },
     onResize: function (size) {
       if (size.width < 992) {
         this.showFooter = false
@@ -197,6 +217,23 @@ export default {
 </script>
 
 <style>
+.alert {
+}
+.alert2 {
+}
+.alert a:link {
+  color:white;
+}
+.alert a:visited {
+  color:white;
+}
+.alert2 a:link {
+  color:white;
+}
+.alert2 a:visited {
+  color:white;
+}
+
 .footer-img {
   height: 20px;
 }
@@ -226,15 +263,15 @@ export default {
 }
 @font-face {
   font-family: Adinatha Tamil Brahmi;
-  src: url('../statics/AdinathaTamilBrahmi2.otf');
+  src: url('https://cdn.jsdelivr.net/gh/virtualvinodh/jinavani/src/statics/Adinatha-Tamil-Brahmi.otf');
 }
 @font-face {
   font-family: e-Brahmi T;
-  src: url('../statics/e-Brahmi-T.ttf');
+  src: url('https://cdn.jsdelivr.net/gh/virtualvinodh/jinavani/src/statics/e-Brahmi-T.ttf');
 }
 @font-face {
   font-family: e-Velvi;
-  src: url('../statics/e-Velvi.ttf');
+  src: url('https://cdn.jsdelivr.net/gh/virtualvinodh/jinavani/src/statics/e-Velvi.ttf');
   font-display: block;
 }
 </style>
