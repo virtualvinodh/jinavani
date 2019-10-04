@@ -21,7 +21,7 @@
 
         <q-toolbar-title>
           Jinavani : ஜினவாணி
-          <div slot="subtitle">Epigraphic Editor : கல்வெட்டுச் சொற்செயலி</div>
+          <div slot="subtitle">கல்வெட்டுச்செயலி </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -43,6 +43,10 @@
         <q-item to="/editor">
           <q-item-side icon="edit" />
           <q-item-main label="Editor" sublabel="சொற்செயலி" />
+        </q-item>
+        <q-item to="/image">
+          <q-item-side icon="image" />
+          <q-item-main label="Image" sublabel="படம்" />
         </q-item>
         <q-collapsible icon="school" label="Learn" sublabel="கற்க" >
             <q-item to="/learn-brahmi">
@@ -139,11 +143,11 @@
       <div :class="$q.platform.is.mobile ? 'alert2': 'alert'" v-if="visibleAlert2" class="q-ma-sm">
       <q-alert
           color="grey-7"
-          icon="favorite"
+          icon="euro_symbol"
           appear
           :actions="[{ label: 'Hide', handler: hideAlert }]"
           class="q-mb-sm"
-        > <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZVFCCB2F4SL6&source=url">Support</a> Jinavani! </q-alert>
+        > <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZVFCCB2F4SL6&source=url">Donate</a> to support Jinavani! </q-alert>
       </div>
       <router-view/>
     </q-page-container>

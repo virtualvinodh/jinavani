@@ -66,6 +66,8 @@ export default {
         brahmiText = brahmiText.replace(/𑁆/g, '')
       }
 
+      this.$emit('converted', brahmiText)
+
       return brahmiText
     }
   }

@@ -30,6 +30,8 @@ export default {
         }
       }
 
+      this.$emit('converted', brahmiText)
+
       return brahmiText
     }
   }

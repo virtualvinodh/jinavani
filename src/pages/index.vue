@@ -108,6 +108,13 @@ export default {
       console.log(node)
       var dhis = this
 
+      this.$q.notify({
+        type: 'info',
+        message: 'Image is being generated. Please wait.',
+        position: 'center',
+        timeout: 500
+      })
+
       html2canvas(node).then(function (canvas) {
         var image = new Image()
         image.src = canvas.toDataURL('image/png', 1)

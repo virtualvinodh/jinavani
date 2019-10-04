@@ -94,6 +94,14 @@ export default [
   },
 
   {
+    path: '/image',
+    component: () => import('layouts/default'),
+    children: [
+      { path: '', component: () => import('pages/image') }
+    ]
+  },
+
+  {
     path: '/download',
     component: () => import('layouts/default'),
     children: [
