@@ -1,13 +1,14 @@
 <template>
   <q-page>
      <h5 class="q-ma-md"> Image Overlay : பட உரை </h5>
+      <div class="q-body-1 q-ma-md">(For now, works only in PC browsers and does not work with mobile browsers)</div>
       <div class="q-body-1 q-ma-md">தாங்கள் விரும்பும் படத்தில் தமிழ்-பிராமி அல்லது வட்டெழுத்து உரையை சேர்க்க. முதலில் படத்தை தேர்வு செய்யவும், பிறகு உரையினை உள்ளிடுக, இறுதியாக நிறத்தை தேர்வு செய்க. <br/> <br/>
       The text can be moved around and zoomed as you wish.
       </div>
       <q-uploader url="" clearable extensions=".jpg, .jpeg, .png, .bmp" @add="showConvertImage" stack-label="Select Image/தேர்வு செய்க" auto-expand
                hide-upload-button ref="uploadF" :style="{width:'250px'}" class="q-ma-md" @remove:cancel="removeFile"/>
       <q-input class="q-ma-md" v-model="textInput" stack-label="Text/உரை" placeholder="தமிழில் உள்ளிடுக"> </q-input>
-      <q-color v-model="color" class="q-ma-md" @input="changeColor" stack-label="Color/நிறம்"></q-color><br/>
+      <q-color-picker v-model="color" class="q-ma-md" @input="changeColor" stack-label="Color/நிறம்"></q-color-picker><br/>
       <controls v-model="options" :extra="false" class="q-ml-md print-hide"></controls>
       <q-btn label="Download image" class="q-ml-md print-hide" @click="printDocument"></q-btn>
       <canvas id="c" :width="canvasWidth" :height="canvasWidth" class="q-ma-md"></canvas>

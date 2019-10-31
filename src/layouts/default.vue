@@ -17,8 +17,16 @@
 
         </q-btn>
 
-        <img src="../statics/icons/icon-512x512.png" width="60px" class="q-ml-sm"/>
-
+        <div class="q-ma-xs">
+          <q-btn
+            round
+            size="lg"
+            color="dark"
+            to="/editor"
+          >
+            <vatteluttu text="ஶ்ரீ" class="demo1"> </vatteluttu>
+          </q-btn>
+        </div>
         <q-toolbar-title>
           Jinavani : ஜினவாணி
           <div slot="subtitle">கல்வெட்டுச்செயலி </div>

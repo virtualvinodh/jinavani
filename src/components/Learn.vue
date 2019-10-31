@@ -21,20 +21,20 @@
                      :is="flip ? 'flipcard' : 'learncard' ">
         </component>
 
-        <br/>
+        <br/><br/><br/><br/>
 
         <component :script1="script" script2="tamil" text="ஃ" class="q-ma-sm"
                      :is="flip ? 'flipcard' : 'learncard' ">
         </component>
 
-        <br/>
+        <br/><br/><br/><br/>
 
         <component v-for="consonant in consonants" :key="consonant" :script1="script" script2="tamil" :text="consonant" class="q-ma-sm"
                      :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)"
                      v-if="script !== 'vatteluttu' || consonant !== 'த⁴'">
         </component>
 
-        <br/>
+        <br/><br/><br/><br/>
 
           <div v-if="script === 'vatteluttu'">
           <q-card color="faded" class="q-ma-sm">
@@ -53,7 +53,7 @@
           <component v-for="vowelSign in vowelSigns" :key="vowelSign + '2'" :script1="script" script2="tamil" :text="consonant + vowelSign" class="q-ma-sm"
                      :is="flip ? 'flipcard' : 'learncard' " :grantha="grantha.includes(consonant)"
                      v-if="script !== 'vatteluttu' || !grantha.includes(consonant) || !short.includes(vowelSign)">
-          </component>
+          </component> <div class="q-ma-md"></div>
           <br/>
         </span>
 

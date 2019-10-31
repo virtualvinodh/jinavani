@@ -1,28 +1,17 @@
 <template>
     <q-page padding>
         <div class="q-mb-lg">
-          <q-btn
-            round
-            size="lg"
-            color="dark"
-          >
-            <vatteluttu text="ஶ்ரீ" class="demo1"> </vatteluttu>
-          </q-btn>
-          <div class="invoc q-ma-sm q-display-1"><vatteluttu text="ஜிநாய நம"> </vatteluttu> </div>
-          <q-btn
-            round
-            size="lg"
-            color="dark"
-          >
-            <img src="../statics/jina-tss.png" width="45px" class="flip-horizontal"/>
-          </q-btn>
+          <div class="invoc q-ma-sm q-display-1"><vatteluttu text="ஶ்ரீ ജിനായ നമഃ"> </vatteluttu> </div>
         </div>
+        <div>
+        <div style="float: left" class="q-mr-sm"><img src="../statics/jina-tss.png" width="60px"/></div>
         <div class="q-body-1 quote-comm q-mb-md">
-              அகார எழுத்து முதலாய் இருக்கிறாப் போலே
+              அகார எழுத்து முதலாய் இருக்கிறாப் போலே <br/>
               உலகத்துக்கெல்லாம் சர்வக்ஞனான சுவாமியே என்றவாறு
               <div class="q-ma-sm">திருக்குறள் ஜைன உரை</div>
         </div>
-
+        </div>
+        <br/>
         <div class="q-body-1">When the great Jina preaches in the Samavasarana, it is said that the divine sound emanating from him gets perceived by the multitude of beings present in their own native tongues. This sound is often called as <i>Jinavani</i>. In a similar vein, we hope to shed light on the ancient Tamil scripts and make it perceivable to the beings in the present day. On a related note, many of the Tamil-Brahmi and Vatteluttu inscriptions are also of Jaina in nature.</div> <br/>
 
         <div class="q-body-1">ஜினேஸ்வரன் தமது சமவசரணத்தில் அமர்ந்து உபதேசிக்கும் போது, சர்வக்ஞனான சுவாமியிடம் இருந்து வெளிப்பட்ட திவ்விய  சப்தத்தை அங்கிருக்கும் அனைத்து ஜீவன்களும் தத்தமது மொழியினில் புரிந்துகொள்வனராம். இந்த சப்தத்தையே  <i>ஜினவாணி</i> என்றழைப்பர். இது போலவே, பண்டைய தமிழ் எழுத்துக்களை இக்காலத்தவரும் புரிந்து கொள்ளும் விதமாக இயற்றப்பட்ட  காரணத்தினால் <span><font size="1"><brahmi text="ஜினவாணி" class="q-mr-sm"></brahmi></font>
@@ -67,7 +56,6 @@ export default {
 }
 .quote-comm {
   text-align: left;
-  width: 450px;
   font-size: 12px;
 }
 </style>
