@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <q-window-resize-observable @resize="onResize" />
-      <iframe src="../statics/adinatha-manual.pdf" width="100%" :height="height"> </iframe>
+      <iframe src="../statics/Adinatha-Manual.pdf" width="100%" :height="height"> </iframe>
   </q-page>
 </template>
 

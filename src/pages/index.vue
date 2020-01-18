@@ -8,16 +8,18 @@
         <component :text="sanitize(textInput)" :spelling="options.spelling"
           :is="options.script === 'brahmi' ? options.font : options.script"></component>
       </div>
-      <QBtn color="light" class="q-ml-md q-mb-md print-hide" label="Download as image" @click="imageConvert"> </QBtn>
       <QBtn color="light" class="q-ml-md q-mb-md print-hide" @click="fontSize = fontSize + 10">
         <q-icon name="zoom in" />
       </QBtn>
       <QBtn color="light" class="q-ml-md q-mb-md print-hide" @click="fontSize = fontSize - 10">
         <q-icon name="zoom out" />
       </QBtn>
+      <QBtn color="light" class="q-ml-md q-mb-md print-hide" icon="photo_camera" label="Download" @click="imageConvert(saveAsImage.bind(this))"> </QBtn>
+      <QBtn color="light" class="q-ml-md q-mb-md print-hide" @click="imageConvert(shareCordova.bind(this))" icon="share" label="Share" v-if="$q.platform.is.cordova">
+      </QBtn>
       <!-- <QBtn color="light" class="q-ml-md q-mb-md print-hide" label="Print" @click="printDocument"> </QBtn> -->
       <controls v-model="options" :extra="true" class="q-ml-md print-hide"></controls>
-      <a :href="brahmiImg" ref="imgDownload" :style="{'display': 'none'}" download="text.png"><button>Download</button></a>
+      <a :href="brahmiImg" ref="imgDownload" target="_system" :style="{'display': 'none'}" download="text.png"><button>Download</button></a>
   </q-page>
 </template>
 
@@ -25,7 +27,7 @@
 </style>
 
 <script>
-import {QEditor, QRadio, QBtn, QField, QBtnToggle, QToggle, QSlider} from 'quasar'
+import {openURL, QEditor, QRadio, QBtn, QField, QBtnToggle, QToggle, QSlider} from 'quasar'
 import Brahmi from '../components/Brahmi'
 import BrahmiE from '../components/BrahmiE'
 import Vatteluttu from '../components/Vatteluttu'
@@ -96,6 +98,58 @@ export default {
     }
   },
   methods: {
+    openURL,
+    saveAsImage: function () {
+      var dhis = this
+      if (dhis.$q.platform.is.cordova) {
+        var params = {data: dhis.brahmiImg, prefix: 'jinavani_', format: 'PNG', quality: 100, mediaScanner: true}
+        window.imageSaver.saveBase64Image(params,
+          function (filePath) {
+            dhis['filepath'] = filePath
+            dhis.$q.notify({
+              type: 'info',
+              message: 'The image has been saved in your gallery. Please check there.',
+              position: 'center',
+              timeout: 5000
+            })
+          },
+          function (msg) {
+            console.error(msg)
+          }
+        )
+      } else {
+        dhis.$refs.imgDownload.click()
+      }
+    },
+    shareCordova: function () {
+      var dhis = this
+
+      var params = {data: dhis.brahmiImg, prefix: 'jinavani_', format: 'PNG', quality: 100, mediaScanner: true}
+      window.imageSaver.saveBase64Image(params,
+        function (filePath) {
+          var options = {
+            message: '',
+            subject: '', // fi. for email
+            files: [filePath], // an array of filenames either locally or remotely
+            chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+          }
+
+          var onSuccess = function (result) {
+            console.log('Share completed? ' + result.completed)
+            console.log('Shared to app: ' + result.app)
+          }
+
+          var onError = function (msg) {
+            console.log('Sharing failed with message: ' + msg)
+          }
+
+          window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError)
+        },
+        function (msg) {
+          console.error(msg)
+        }
+      )
+    },
     sanitize: function (html) {
       sanitizeHtml.defaults.allowedTags.push('font')
       console.log(sanitizeHtml.defaults.allowedAttributes)
@@ -103,7 +157,7 @@ export default {
       sanitizeHtml.defaults.allowedAttributes['font'] = ['size']
       return sanitizeHtml(html)
     },
-    imageConvert: function () {
+    imageConvert: function (fnc) {
       var node = this.$refs.brahmiText
       console.log(node)
       var dhis = this
@@ -127,9 +181,7 @@ export default {
           image2.src = cropped
           dhis.brahmiImg = cropped
 
-          image2.onload = function () {
-            dhis.$refs.imgDownload.click()
-          }
+          image2.onload = fnc
         }
       })
     },

@@ -20,7 +20,7 @@
         <div class="q-ma-xs">
           <q-btn
             round
-            size="lg"
+            size="16px"
             color="dark"
             to="/editor"
           >
@@ -52,7 +52,7 @@
           <q-item-side icon="edit" />
           <q-item-main label="Editor" sublabel="சொற்செயலி" />
         </q-item>
-        <q-item to="/image">
+        <q-item to="/image"  v-if="$q.platform.is.desktop">
           <q-item-side icon="image" />
           <q-item-main label="Image" sublabel="படம்" />
         </q-item>
@@ -78,7 +78,7 @@
               <q-item-main label="Flipcards" sublabel="திருப்புக" />
             </q-item>
             <q-item to="/memory-cards">
-              <q-item-main label="Memorize" sublabel="நினைவில் கொள்க " />
+              <q-item-main label="Memorize" sublabel="நினைவில் கொள்க "/>
             </q-item>
         </q-collapsible>
         <q-collapsible icon="book" label="Books"  sublabel="நூல்கள்" >
@@ -89,7 +89,7 @@
             <q-item-main label="Tholkaappiyam" sublabel="தொல்காப்பியம்" />
           </q-item>
         </q-collapsible>
-        <q-collapsible icon="build" label="Manuals" sublabel="கையேடுகள்" >
+        <q-collapsible icon="build" label="Manuals" sublabel="கையேடுகள்" v-if="!$q.platform.is.cordova">
           <q-item to="/adinatha-manual">
             <q-item-main label="Adinatha Font Manual" sublabel="ஆதிநாதர் கையேடு" />
           </q-item>
@@ -117,7 +117,7 @@
               <q-item-main label="Udayam Fonts" sublabel="உதயம் எழுத்துரு" />
             </q-item>
         </q-collapsible>
-         <q-item to="/download">
+         <q-item to="/download"  v-if="!$q.platform.is.cordova">
           <q-item-side icon="cloud download" />
           <q-item-main label="Download" sublabel="தகவலிறக்கம்" />
         </q-item>
@@ -132,7 +132,7 @@
                       description="Tamil Epigraphic Editor : தமிழ்க் கல்வெட்டுச் சொற்செயலி"
                       quote="Tamil Epigraphic Editor : தமிழ்க் கல்வெட்டுச் சொற்செயலி"
                       hashtags="jinavani,tamil,brahmi,tamilepigraphy"
-                      inline-template>
+                      inline-template  v-if="!$q.platform.is.cordova">
   <div class="social">
       <network network="facebook" class="q-ma-md cursor-pointer">
         <img src="../statics/facebook.svg" width="20px">
@@ -148,15 +148,17 @@
     </q-layout-drawer>
 
     <q-page-container class="page">
-      <div :class="$q.platform.is.mobile ? 'alert2': 'alert'" v-if="visibleAlert2" class="q-ma-sm">
-      <q-alert
-          color="grey-7"
-          icon="euro_symbol"
-          appear
-          :actions="[{ label: 'Hide', handler: hideAlert }]"
-          class="q-mb-sm"
-        > <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZVFCCB2F4SL6&source=url">Donate</a> to support Jinavani! </q-alert>
-      </div>
+      <span v-if="!$q.platform.is.cordova">
+        <div :class="$q.platform.is.mobile ? 'alert2': 'alert'" v-if="visibleAlert2" class="q-ma-sm">
+        <q-alert
+            color="grey-7"
+            icon="euro_symbol"
+            appear
+            :actions="[{ label: 'Hide', handler: hideAlert }]"
+            class="q-mb-sm"
+          > <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZVFCCB2F4SL6&source=url">Donate</a> to support Jinavani! </q-alert>
+        </div>
+        </span>
       <router-view/>
     </q-page-container>
     <q-layout-footer v-show="showFooter" class="print-hide">

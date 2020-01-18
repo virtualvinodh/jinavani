@@ -19,3 +19,7 @@ yarn-error.log*
 *.sln
 
 src/plugins/analytics\.js
+
+pgicons-5dda9d76a2b56/
+
+pgicons-5dda9d76a2b56.zip

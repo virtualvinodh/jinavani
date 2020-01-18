@@ -40,7 +40,16 @@ export default {
   created: function () {
     var dhis = this
     this['old'] = Date.now()
-    this.$axios.get('../statics/' + this.name + '.html', {})
+
+    var path = ''
+
+    if (this.$q.platform.is.cordova) {
+      path = './statics/'
+    } else {
+      path = '../statics/'
+    }
+
+    this.$axios.get(path + this.name + '.html', {})
       .then(function (response) {
         dhis.text = response.data
       })
