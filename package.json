@@ -11,7 +11,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "blueimp-canvas-to-blob": "^3.16.0",
     "cordova-save-image-gallery": "0.0.26",
     "dom-to-image": "^2.6.0",
