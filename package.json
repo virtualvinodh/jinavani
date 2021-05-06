@@ -21,7 +21,7 @@
     "jimp": "^0.2.27",
     "jspdf": "^1.4.1",
     "quasar-cli": "^0.16.4",
-    "sanitize-html": "^1.18.2",
+    "sanitize-html": "^2.3.2",
     "smartcrop": "^2.0.3",
     "underscore": "^1.9.1",
     "vue-analytics": "^5.12.3",
